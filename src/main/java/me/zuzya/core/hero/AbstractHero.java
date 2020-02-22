@@ -1,12 +1,12 @@
 package me.zuzya.core.hero;
 
-import me.zuzya.core.other.Buf;
-import me.zuzya.core.other.Curse;
-import me.zuzya.core.other.Item;
-import me.zuzya.core.other.Power;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import me.zuzya.core.accessories.Buf;
+import me.zuzya.core.accessories.Curse;
+import me.zuzya.core.accessories.Item;
+import me.zuzya.core.accessories.Power;
 
 public class AbstractHero implements Hero {
 
@@ -31,6 +31,28 @@ public class AbstractHero implements Hero {
     private List<Buf> buffs;
 
     private List<Curse> curses;
+
+    private int money;
+
+    private int freeSlots;
+
+    @Override
+    public int getMoney() {
+
+        return money;
+    }
+
+    @Override
+    public int getFreeSlots() {
+
+        return freeSlots;
+    }
+
+    @Override
+    public void addItem(Item item) {
+
+        this.items.add(item);
+    }
 
     /**
      * Builder
@@ -87,12 +109,6 @@ public class AbstractHero implements Hero {
         public Builder setPower(Power power) {
 
             hero.power = power;
-            return this;
-        }
-
-        public Builder addItem(Item item) {
-
-            hero.items.add(item);
             return this;
         }
 

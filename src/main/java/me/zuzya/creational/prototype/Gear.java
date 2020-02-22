@@ -1,6 +1,6 @@
 package me.zuzya.creational.prototype;
 
-import me.zuzya.core.other.Power;
+import me.zuzya.core.accessories.Power;
 
 public class Gear implements Cloneable {
 

@@ -1,9 +1,12 @@
 package me.zuzya.creational.builder;
 
-import me.zuzya.core.hero.*;
-import me.zuzya.core.other.Buf;
-import me.zuzya.core.other.Item;
-import me.zuzya.core.other.Power;
+import me.zuzya.core.hero.AbstractHero;
+import me.zuzya.core.hero.AgilityHero;
+import me.zuzya.core.hero.Hero;
+import me.zuzya.core.hero.IntelligenceHero;
+import me.zuzya.core.accessories.Buf;
+import me.zuzya.core.accessories.Curse;
+import me.zuzya.core.accessories.Power;
 
 public class Runner {
 
@@ -33,7 +36,7 @@ public class Runner {
                 .setStamina(50)//
                 .setManaReserv(100)//
                 .setPower(new Power())//
-                .addItem(new Item())//
+                .addCurse(new Curse())//
                 .build();
     }
 }
