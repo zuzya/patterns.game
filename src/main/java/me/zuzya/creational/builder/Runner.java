@@ -1,6 +1,9 @@
 package me.zuzya.creational.builder;
 
 import me.zuzya.creational.core.hero.*;
+import me.zuzya.creational.core.other.Buf;
+import me.zuzya.creational.core.other.Item;
+import me.zuzya.creational.core.other.Power;
 
 public class Runner {
 

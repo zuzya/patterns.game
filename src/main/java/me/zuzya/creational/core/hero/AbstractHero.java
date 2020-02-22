@@ -1,5 +1,10 @@
 package me.zuzya.creational.core.hero;
 
+import me.zuzya.creational.core.other.Buf;
+import me.zuzya.creational.core.other.Curse;
+import me.zuzya.creational.core.other.Item;
+import me.zuzya.creational.core.other.Power;
+
 import java.util.ArrayList;
 import java.util.List;
 
