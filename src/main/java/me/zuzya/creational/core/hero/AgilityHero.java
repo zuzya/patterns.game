@@ -1,4 +1,4 @@
-package me.zuzya.creational.core;
+package me.zuzya.creational.core.hero;
 
 public class AgilityHero implements Hero{
 }
