@@ -1,4 +1,4 @@
-package me.zuzya.creational.core.hero;
+package me.zuzya.core.hero;
 
 public class LightIntelligenceHero extends IntelligenceHero {
 }

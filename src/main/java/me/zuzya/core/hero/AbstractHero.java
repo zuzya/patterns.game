@@ -1,9 +1,9 @@
-package me.zuzya.creational.core.hero;
+package me.zuzya.core.hero;
 
-import me.zuzya.creational.core.other.Buf;
-import me.zuzya.creational.core.other.Curse;
-import me.zuzya.creational.core.other.Item;
-import me.zuzya.creational.core.other.Power;
+import me.zuzya.core.other.Buf;
+import me.zuzya.core.other.Curse;
+import me.zuzya.core.other.Item;
+import me.zuzya.core.other.Power;
 
 import java.util.ArrayList;
 import java.util.List;

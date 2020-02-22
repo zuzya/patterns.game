@@ -1,7 +1,7 @@
 package me.zuzya.creational.factorymethod.pattern;
 
-import me.zuzya.creational.core.hero.AgilityHero;
-import me.zuzya.creational.core.hero.Hero;
+import me.zuzya.core.hero.AgilityHero;
+import me.zuzya.core.hero.Hero;
 
 public class AgilityHeroPicker implements HeroPicker {
 

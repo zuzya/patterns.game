@@ -1,6 +1,6 @@
 package me.zuzya.creational.factorymethod.pattern;
 
-import me.zuzya.creational.core.hero.Hero;
+import me.zuzya.core.hero.Hero;
 
 /**
  * Learn Factory Method

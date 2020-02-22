@@ -1,9 +1,9 @@
 package me.zuzya.creational.factory.pattern;
 
-import me.zuzya.creational.core.hero.AgilityHero;
-import me.zuzya.creational.core.hero.IntelligenceHero;
-import me.zuzya.creational.core.hero.LightAgilityHero;
-import me.zuzya.creational.core.hero.LightIntelligenceHero;
+import me.zuzya.core.hero.AgilityHero;
+import me.zuzya.core.hero.IntelligenceHero;
+import me.zuzya.core.hero.LightAgilityHero;
+import me.zuzya.core.hero.LightIntelligenceHero;
 
 public class LightHeroFactory implements AbstractHeroFactory {
 

@@ -1,7 +1,7 @@
 package me.zuzya.creational.factory;
 
-import me.zuzya.creational.core.hero.AgilityHero;
-import me.zuzya.creational.core.hero.IntelligenceHero;
+import me.zuzya.core.hero.AgilityHero;
+import me.zuzya.core.hero.IntelligenceHero;
 
 public class Team {
 
