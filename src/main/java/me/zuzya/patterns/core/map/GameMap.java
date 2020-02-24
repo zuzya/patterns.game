@@ -1,6 +1,7 @@
 package me.zuzya.patterns.core.map;
 
 import lombok.Data;
+import me.zuzya.patterns.core.hero.Hero;
 
 @Data
 public class GameMap {
@@ -11,5 +12,7 @@ public class GameMap {
 
         this.itemShop = itemShop;
     }
+
+
 
 }

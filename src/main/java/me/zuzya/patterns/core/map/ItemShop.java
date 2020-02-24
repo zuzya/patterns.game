@@ -5,7 +5,7 @@ import java.util.Map;
 
 import me.zuzya.patterns.core.exception.BuingException;
 import me.zuzya.patterns.core.accessories.Cataloged;
-import me.zuzya.patterns.core.accessories.Item;
+import me.zuzya.patterns.core.accessories.BaseItem;
 
 public class ItemShop  {
 
@@ -19,12 +19,12 @@ public class ItemShop  {
         this.itemsBalance = new HashMap<>();
     }
 
-    public Item buy(Cataloged cataloged, int money) throws BuingException {
+    public BaseItem buy(Cataloged cataloged, int money) throws BuingException {
 
         if (catalog.containsKey(cataloged)) {
             if (catalog.get(cataloged) <= money) {
                 if (itemsBalance.get(cataloged) > 0) {
-                    return new Item(cataloged.getName());
+                    return new BaseItem(cataloged.getName());
                 } else {
                     throw new BuingException("sorry, this kind of item is ended");
                 }

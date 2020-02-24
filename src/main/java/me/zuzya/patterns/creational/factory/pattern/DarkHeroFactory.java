@@ -1,19 +1,21 @@
 package me.zuzya.patterns.creational.factory.pattern;
 
 import me.zuzya.patterns.core.hero.AgilityHero;
-import me.zuzya.patterns.core.hero.DarkAgilityHero;
-import me.zuzya.patterns.core.hero.DarkIntelligenceHero;
 import me.zuzya.patterns.core.hero.IntelligenceHero;
+import me.zuzya.patterns.core.hero.SideType;
 
 public class DarkHeroFactory implements AbstractHeroFactory {
 
     public AgilityHero createAgilityHero() {
 
-        return new DarkAgilityHero();
+        /*
+         * Bridge: instead of creating DarkAgilityHero we used composition with SideType
+         */
+        return new AgilityHero(SideType.DARK);
     }
 
     public IntelligenceHero createIntelligenceHero() {
 
-        return new DarkIntelligenceHero();
+        return new IntelligenceHero(SideType.DARK);
     }
 }

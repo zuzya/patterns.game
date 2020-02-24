@@ -3,12 +3,20 @@ package me.zuzya.patterns.core.hero;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import me.zuzya.patterns.core.accessories.Buf;
 import me.zuzya.patterns.core.accessories.Curse;
-import me.zuzya.patterns.core.accessories.Item;
+import me.zuzya.patterns.core.accessories.BaseItem;
 import me.zuzya.patterns.core.accessories.Power;
 
+@NoArgsConstructor
+@Getter
+@Setter
 public class AbstractHero implements Hero {
+
+    private SideType side;
 
     private String name;
 
@@ -26,7 +34,8 @@ public class AbstractHero implements Hero {
 
     private Power power;
 
-    private List<Item> items;
+
+    private List<BaseItem> items;
 
     private List<Buf> buffs;
 
@@ -35,6 +44,11 @@ public class AbstractHero implements Hero {
     private int money;
 
     private int freeSlots;
+
+    public AbstractHero(SideType side) {
+
+        this.side = side;
+    }
 
     @Override
     public int getMoney() {
@@ -49,7 +63,7 @@ public class AbstractHero implements Hero {
     }
 
     @Override
-    public void addItem(Item item) {
+    public void addItem(BaseItem item) {
 
         this.items.add(item);
     }
@@ -66,7 +80,7 @@ public class AbstractHero implements Hero {
         public Builder() {
 
             hero = new AbstractHero();
-            hero.items = new ArrayList<Item>();
+            hero.items = new ArrayList<BaseItem>();
             hero.buffs = new ArrayList<Buf>();
             hero.curses = new ArrayList<Curse>();
         }
