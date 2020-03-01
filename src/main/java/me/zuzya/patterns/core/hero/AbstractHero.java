@@ -6,10 +6,7 @@ import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import me.zuzya.patterns.core.accessories.Buf;
-import me.zuzya.patterns.core.accessories.Curse;
-import me.zuzya.patterns.core.accessories.BaseItem;
-import me.zuzya.patterns.core.accessories.Power;
+import me.zuzya.patterns.core.accessories.*;
 
 @NoArgsConstructor
 @Getter
@@ -34,8 +31,7 @@ public class AbstractHero implements Hero {
 
     private Power power;
 
-
-    private List<BaseItem> items;
+    private List<Item> items;
 
     private List<Buf> buffs;
 
@@ -68,6 +64,11 @@ public class AbstractHero implements Hero {
         this.items.add(item);
     }
 
+    public List<Item> getItems() {
+
+        return items;
+    }
+
     /**
      * Builder
      */
@@ -80,7 +81,7 @@ public class AbstractHero implements Hero {
         public Builder() {
 
             hero = new AbstractHero();
-            hero.items = new ArrayList<BaseItem>();
+            hero.items = new ArrayList<Item>();
             hero.buffs = new ArrayList<Buf>();
             hero.curses = new ArrayList<Curse>();
         }
