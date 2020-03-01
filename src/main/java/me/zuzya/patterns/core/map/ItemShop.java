@@ -1,13 +1,20 @@
 package me.zuzya.patterns.core.map;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-import me.zuzya.patterns.core.exception.BuingException;
+import me.zuzya.patterns.behavioral.chain.Checker;
+import me.zuzya.patterns.behavioral.chain.CompatibleChecker;
+import me.zuzya.patterns.behavioral.chain.EnoughMoneyChecker;
+import me.zuzya.patterns.behavioral.chain.HighLvlItemChecker;
 import me.zuzya.patterns.core.accessories.Cataloged;
-import me.zuzya.patterns.core.accessories.BaseItem;
+import me.zuzya.patterns.core.accessories.Item;
+import me.zuzya.patterns.core.exception.BuingException;
+import me.zuzya.patterns.core.hero.Hero;
 
-public class ItemShop  {
+public class ItemShop {
 
     private Map<Cataloged, Integer> catalog;
 
@@ -19,12 +26,24 @@ public class ItemShop  {
         this.itemsBalance = new HashMap<>();
     }
 
-    public BaseItem buy(Cataloged cataloged, int money) throws BuingException {
+    public Item buy(Cataloged cataloged, Hero hero) throws BuingException {
 
+        // todo: simplify catalog checking with chain of responsibility for example
         if (catalog.containsKey(cataloged)) {
-            if (catalog.get(cataloged) <= money) {
+            if (catalog.get(cataloged) <= hero.getMoney()) {
                 if (itemsBalance.get(cataloged) > 0) {
-                    return new BaseItem(cataloged.getName());
+
+                    Item item = new Item(cataloged.getName());
+
+                    // chain of responsibility
+                    if (getCheckersChain().stream()
+                            .allMatch(checker -> checker.check(hero, item))) {
+                        return item;
+                    } else {
+                        throw new BuingException(
+                                "sorry, this kind of item is not compatible to this hero");
+                    }
+
                 } else {
                     throw new BuingException("sorry, this kind of item is ended");
                 }
@@ -34,5 +53,16 @@ public class ItemShop  {
         } else {
             throw new BuingException("not found this item!");
         }
+    }
+
+    private List<Checker> getCheckersChain() {
+
+        // todo: move to Shop configuration
+        List<Checker> checkers = new ArrayList<>();
+        checkers.add(new CompatibleChecker());
+        checkers.add(new EnoughMoneyChecker());
+        checkers.add(new HighLvlItemChecker());
+
+        return checkers;
     }
 }

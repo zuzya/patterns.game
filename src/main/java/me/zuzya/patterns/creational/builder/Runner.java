@@ -1,8 +1,7 @@
 package me.zuzya.patterns.creational.builder;
 
-import me.zuzya.patterns.core.hero.AbstractHero;
-import me.zuzya.patterns.core.hero.AgilityHero;
 import me.zuzya.patterns.core.hero.Hero;
+import me.zuzya.patterns.core.hero.AgilityHero;
 import me.zuzya.patterns.core.hero.IntelligenceHero;
 import me.zuzya.patterns.core.accessories.Buf;
 import me.zuzya.patterns.core.accessories.Curse;
@@ -12,7 +11,7 @@ public class Runner {
 
     public Hero buildAgilityHero() {
 
-        AbstractHero.Builder agilityBuilder = AgilityHero.builder;
+        Hero.Builder agilityBuilder = AgilityHero.builder;
 
         return agilityBuilder//
                 .setName("Illidan")//
@@ -27,7 +26,7 @@ public class Runner {
 
     public Hero buildIntelligenceHero() {
 
-        AbstractHero.Builder agilityBuilder = IntelligenceHero.builder;
+        Hero.Builder agilityBuilder = IntelligenceHero.builder;
 
         return agilityBuilder//
                 .setName("Gul'Dan")//
